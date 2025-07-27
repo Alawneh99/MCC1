@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Thank You</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .page {
+      position: relative;
+      min-height: 100vh;
+      background-color: #f0f0f0;
+      overflow: hidden;
+    }
+
+    /* Top banner image */
+    .top-image {
+      width: 100%;
+      height: 590px;
+      object-fit: fill;
+      display: block;
+    }
+
+    /* Bottom panel */
+    .panel {
+      position: relative;
+      width: 100%;
+      height: 42.41vh;
+      background-color: #A19995;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .panel p {
+      color: #F6EBDD;
+      font-size: 1.6vw;
+      font-weight: 700;
+      line-height: 1.5;
+    }
+
+    .panel p span {
+      display: block;
+      margin-top: 0.5rem;
+      font-size: 1.2vw;
+      font-weight: 400;
+      letter-spacing: 0.05em;
+    }
+
+    /* Logo and triangle */
+    .logo-corner {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 150px;
+      height: 150px;
+    }
+
+    .logo-corner .triangle {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 150px;
+      height: 150px;
+      background-color: #8B8681;
+      clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+      z-index: 1;
+      mask-image: linear-gradient(to right, rgba(0,0,0,0.4) 50%, transparent 100%);
+      -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,0.4) 50%, transparent 100%);
+    }
+
+    .logo-corner img {
+      position: absolute;
+      bottom: 30px;
+      right: 0px;
+      width: 150px;
+      z-index: 2;
+      object-fit: contain;
+      mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+      -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+    }
+
+    /* Right stripe with vertical fade */
+    .page::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 74px;
+      height: 500px;
+      background-color: #D0C8C0;
+      z-index: 0;
+      mask-image: linear-gradient(to top, rgba(0,0,0,1) 1%, rgba(0,0,0,0));
+      -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,1) 1%, rgba(0,0,0,0));
+    }
+
+    /* Responsive fallback for mobile */
+    @media (max-width: 768px) {
+      .top-image {
+        height: 300px;
+      }
+
+      .panel p {
+        font-size: 5vw;
+      }
+
+      .panel p span {
+        font-size: 3.5vw;
+      }
+
+      .logo-corner {
+        width: 100px;
+        height: 100px;
+      }
+
+      .logo-corner img {
+        width: 100px;
+      }
+
+      .logo-corner .triangle {
+        width: 100px;
+        height: 100px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- Top full-width image -->
+    <img src="./Thank you.jpg" alt="Top Image" class="top-image" />
+
+    <!-- Bottom panel -->
+    <div class="panel">
+      <p>THANK YOU! OUR TEAM WILL CONTACT YOU<br>
+        <span>SHORTLY WITH A TAILORED PROPOSAL</span>
+      </p>
+      <div class="logo-corner">
+        <div class="triangle"></div>
+        <img src="./Logo.png" alt="Logo" />
+      </div>
+    </div>
+  </div>
+
+  <!-- Redirect if page is reloaded directly -->
+  <script>
+    (function () {
+      const isReload =
+        performance.navigation.type === 1 ||
+        performance.getEntriesByType("navigation")[0]?.type === "reload";
+
+      const currentPage = window.location.pathname.split("/").pop();
+
+      if (isReload && currentPage !== "index.html" && currentPage !== "") {
+        window.location.href = "index.html";
+      }
+    })();
+  </script>
+</body>
+</html>

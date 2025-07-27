@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project Information</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="project-style.css" />
+  <script src="navigation.js" defer></script>
+</head>
+<body>
+  <div class="page">
+
+    <form id="projectForm">
+      <p class="instruction">Project Type:</p>
+      <div class="dropdown">
+        <select name="projectType" required>
+          <option value="">Select project type</option>
+          <option>Residential Villa</option>
+          <option>Housing Complex</option>
+          <option>School / Educational Building</option>
+          <option>Commercial Project</option>
+          <option>T-wall</option>
+          <option>Interlock Block</option>
+        </select>
+      </div>
+
+      <div class="info-block fields">
+        <label>Built-up Area (m²): 
+          <input type="number" name="builtUpArea" placeholder="Enter area in m²" required />
+        </label>
+        <label>Number of Floors:
+          <select name="floors" required>
+            <option value="">Select floors</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5+</option>
+          </select>
+        </label>
+      </div>
+    </form>
+
+    <div class="bottom-image">
+      <img src="./Project.jpg" alt="Bottom Construction Image" />
+    </div>
+
+    <div class="logo-corner">
+      <img src="./Logo.png" alt="Logo" />
+    </div>
+
+    <button class="next-button">Next</button>
+  </div>
+</body>
+</html>

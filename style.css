@@ -1,0 +1,138 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Background and container setup */
+html, body {
+  width: 100%;
+  height: 100%;
+  background-color: #f9f9f9;
+  overflow: hidden;
+}
+
+.page {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Background image */
+.bg-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+/* Dark overlay with angled edge */
+.overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60%;
+  background-color: rgba(50, 50, 50, 0.7);
+  z-index: 2;
+  padding: 4vh 5vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+
+  clip-path: polygon(
+    0 0,
+    85% 0,
+    100% 100%,
+    0 100%
+  );
+}
+
+/* Heading and text styling */
+.overlay h1 {
+  font-size: 3vw;
+  line-height: 1.3;
+  margin-bottom: 1.5vh;
+  color: #fff;
+}
+
+.highlight {
+  color: #f9a825;
+}
+
+.subtitle {
+  font-size: 1.5vw;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 1vh;
+  color: #e0e0e0;
+}
+
+.desc {
+  font-size: 1.9vw;
+  color: #ccc;
+  margin-bottom: 2vh;
+}
+
+/* Start button */
+.start-btn {
+  background-color: #f9a825;
+  color: white;
+  border: none;
+  padding: 1.2em 2em;
+  font-size: 1.5vw;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  max-width: 400px;
+  transition: background-color 0.3s ease;
+}
+
+.start-btn:hover {
+  background-color: #f57f17;
+}
+
+/* Logo alignment */
+.logo {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: auto;
+}
+
+.logo img {
+  width: 260px;
+  height: auto;
+}
+
+/* Optional: Make it adapt slightly to other devices */
+@media screen and (max-width: 1100px) {
+  .overlay {
+    clip-path: polygon(0 0, 90% 0, 100% 100%, 0% 100%);
+    padding: 3vh 4vw;
+  }
+
+  .overlay h1 {
+    font-size: 28px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+  }
+
+  .desc {
+    font-size: 20px;
+  }
+
+  .start-btn {
+    font-size: 16px;
+    width: 100%;
+  }
+
+  .logo img {
+    width: 200px;
+  }
+}

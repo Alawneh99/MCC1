@@ -1,0 +1,138 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #A99E9A;
+}
+
+.page {
+  position: relative;
+  min-height: 100vh;
+  padding: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: hidden;
+  color: #fff;
+}
+
+/* Left side shadow strip */
+.page::after {
+  content: "";
+  position: absolute;
+  top: 600px;
+  left: 0;
+  width: 400px;
+  height: 100%;
+  background-color: #020202;
+  z-index: 1;
+  mask-image: linear-gradient(to right, rgba(0,0,0,0.4) 50%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,0.4) 50%, transparent 100%);
+}
+
+.instruction {
+  font-size: 1.2vw;
+  font-weight: 700;
+  margin-bottom: 1vh;
+  color: #F6EBDD;
+  z-index: 2;
+}
+
+.dropdown select {
+  padding: 0.5em;
+  font-size: 1vw;
+  border-radius: 5px;
+  border: none;
+  background: #f9f9f9;
+  color: #333;
+  margin-bottom: 2vh;
+  width: 100%;
+}
+
+.fields {
+  margin: 2vh 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+  font-size: 1vw;
+  width: 100%;
+  z-index: 2;
+}
+
+.fields label {
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+}
+
+.fields input,
+.fields select {
+  padding: 0.5em 0.8em;
+  font-size: 1vw;
+  border: none;
+  border-radius: 5px;
+  margin-top: 0.5vh;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+/* Bottom full-width image */
+.bottom-image {
+  position: relative;
+  width: 100vw;
+  height: 380px;
+  overflow: hidden;
+  margin-top: 2vh;
+  z-index: 0;
+}
+
+.bottom-image img {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  display: block;
+}
+
+/* Logo in corner */
+.logo-corner img {
+  position: absolute;
+  bottom: 30px;
+  right: 0px;
+  width: 150px;
+  z-index: 3;
+  object-fit: contain;
+}
+
+/* Next button centered at bottom */
+.next-button {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 12px 28px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1.2vw;
+  color: #ffffff;
+  background-color: #f57f17;
+  border: 2px solid #f9a825;
+  border-radius: 8px;
+  cursor: pointer;
+  z-index: 4;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.next-button:hover {
+  background-color: #f9a825;
+  color: #fff;
+}
